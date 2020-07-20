@@ -1,4 +1,6 @@
 FROM ruby:2.5.3 as base
 
-ADD Gemfile Gemfile.lock /down-webapp/
+RUN mkdir /app
+ADD Gemfile Gemfile.lock /app/
+WORKDIR /app
 RUN bundle install --binstubs
